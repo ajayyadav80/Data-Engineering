@@ -1,0 +1,25 @@
+Create Pipeline to analyse Covid data from aws datalake to Azure sysnapse Analytics 
+
+Part 1 - Analyze the data in Azure SQL Database.
+
+1. download the data from Amazon aws datalake - https://aws.amazon.com/covid-19-data-lake/
+2. Create Azure storage account and Upload the data in storage account
+3. Create Azure SQL Database for analysing the date using sql
+4. Create Azure Datafactory to copy the data from storage account to SQL Database.
+5. Create Relational Database in SQL db by using sink option as "Auto table create" in Azure Datafactory
+6. Use SQL query editor in Azure sql db to analyse the data
+
+Part 2 - Fetch data from Sql DB to Create fact and dim tables for Data warehouse in Synapse Analytics.
+
+1. Create Databricks cluster and use JDBC method to read the data from SQL DB to Databarick using pySpark.
+2. Create Fact and Dimension tables using pySpark
+3. Create Mount point to store the results back to Storage account
+4. Store the dataframes back to storage account using pySpark.
+
+
+Part 3 - Fetch data from Azure Storage to data warehouse in Synapse Analytics. 
+
+1. Create a Synapse Analytics workspace.
+2. Use already created Delta storage gen to storage account and use the delta files which is already created in Part2
+3. Query the data stored in Gen2 account by using OPENROWSET fuction in synapse analytics
+4. Analyse the data using serverless synapse analytics. 
